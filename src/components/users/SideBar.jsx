@@ -8,7 +8,7 @@ export const SideBar = () => {
   
   return (
     <div
-      className="bg-my-bg-third w-1/4"
+      className="bg-my-bg-third w-1/4 text-my-font-one"
     >
 
       <h2 className=" animate-bounce mt-10 mb-10 font-black text-3xl text-center text-my-font-one" >
@@ -17,21 +17,21 @@ export const SideBar = () => {
 
       <Link
         to="/users"
-        className={`${urlActual === '/users' ? 'border-b-my-font-one animate-pulse' : ' border-transparent '} ' block text-center mb-4 text-xl font-medium border-b-2 hover:border-b-my-font-one transition-all w-auto '`}
+        className={`${urlActual === '/users' && ' text-2xl font-semibold tracking-widest' } ' block text-center mb-4 text-xl font-medium transition-all w-auto '`}
       >
         Clientes
       </Link>
 
       <Link
         to="/users/new"
-        className={` ${urlActual === '/users/new' ? 'border-b-my-font-one animate-pulse' : ' border-transparent '}  block text-center mb-4 text-xl font-medium border-b-2 border-transparent hover:border-b-my-font-one transition-all '`}
+        className={` ${urlActual === '/users/new' && ' text-2xl font-semibold tracking-widest'}  block text-center mb-4 text-xl font-medium transition-all '`}
       >
         Nuevo Cliente
       </Link>
 
       <Link
         to="/users/update"
-        className={` ${urlActual === '/users/update' ? 'border-b-my-font-one animate-pulse' : ' border-transparent '}  block text-center text-xl font-medium border-b-2 border-transparent hover:border-b-my-font-one transition-all '`}
+        className={` ${urlActual === '/users/update' && ' text-2xl font-semibold tracking-widest'}  block text-center text-xl font-medium transition-all '`}
       >
         Editar Cliente
       </Link>
