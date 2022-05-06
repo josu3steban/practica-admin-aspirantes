@@ -15,7 +15,7 @@ const App = () => {
           <Route index element={ <LogginScreen />} />
         </Route> */}
 
-        <Route path='/users' element={ <UserScreen /> }>
+        <Route path='/' element={ <UserScreen /> }>
           <Route index element={ <UserListContainer /> } />
           <Route path='new' element={ <UserNew /> } />
           <Route path='update' element={ <UserUpdate /> } />

@@ -16,22 +16,22 @@ export const SideBar = () => {
       </h2>
 
       <Link
-        to="/users"
-        className={`${urlActual === '/users' && ' text-xl font-semibold tracking-widest' } ' block text-center mb-4 text-xl font-medium transition-all w-auto '`}
+        to="/"
+        className={`${urlActual === '/' && ' text-xl font-semibold tracking-widest' } ' block text-center mb-4 text-xl font-medium transition-all w-auto '`}
       >
         Aspirantes
       </Link>
 
       <Link
-        to="/users/new"
-        className={` ${urlActual === '/users/new' && ' text-xl font-semibold tracking-widest'}  block text-center mb-4 text-xl font-medium transition-all '`}
+        to="/new"
+        className={` ${urlActual === '/new' && ' text-xl font-semibold tracking-widest'}  block text-center mb-4 text-xl font-medium transition-all '`}
       >
         Agregar Aspirante
       </Link>
 
       <Link
-        to="/users/update"
-        className={` ${urlActual === '/users/update' && ' text-xl font-semibold tracking-widest'}  block text-center text-xl font-medium transition-all '`}
+        to="/update"
+        className={` ${urlActual === '/update' && ' text-xl font-semibold tracking-widest'}  block text-center text-xl font-medium transition-all '`}
       >
         Editar Aspirante
       </Link>
