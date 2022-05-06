@@ -23,6 +23,13 @@ export const userSetActive = ( id ) => {
     }
 }
 
+export const userCleanActive = ( ) => {
+    return {
+        type: types.userSetActive,
+        payload: null
+    }
+}
+
 export const userStartLoad = () => {
 
     return async ( dispatch ) => {
@@ -91,6 +98,11 @@ const userAdd = ( user ) => {
         payload: user
     }
 };
+
+export const userStartUpdate = ( id ) => {
+
+
+}
 
 export const userStartDelete = ( id ) => {
     return async( dispatch ) => {

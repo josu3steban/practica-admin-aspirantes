@@ -3,8 +3,6 @@ import { UserForm } from './UserForm'
 
 export const UserNew = () => {
 
-  
-  
   return (
     <div className='flex flex-col items-center '>
       

@@ -1,5 +1,6 @@
 import { Field, Form, Formik } from "formik";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
 import { userStartAdd } from "../../actions/user";
 
@@ -7,6 +8,10 @@ import { userStartAdd } from "../../actions/user";
 export const UserForm = () => {
 
     const dispatch = useDispatch();
+    const { active } = useSelector( state => state.user );
+    const { user } = useSelector( state => state.user );
+
+    const [ userEdit, setUserEdit ] = useState({});
 
     const newUserSchema = Yup.object().shape({
         name: Yup.string().required("El nombre es obligatorio"),
@@ -21,6 +26,20 @@ export const UserForm = () => {
 
     }
 
+    useEffect( () => {
+
+
+        if ( !!active ) {
+
+            setUserEdit( user.find( users => users.id === active ) );
+
+        }
+
+    }, [setUserEdit] );
+
+    console.log('HOOOLAAA');
+
+
   return (
 
     <div className="mt-10 w-3/4 p-10 border rounded-md shadow-md ">
@@ -28,13 +47,15 @@ export const UserForm = () => {
         
             initialValues={
                 {
-                    name        : '',
-                    email       : '',
-                    university  : '',
-                    cellphone   : '',
-                    description : ''
+                    name        : (!!active) ? userEdit.name        : '',
+                    email       : (!!active) ? userEdit.email       : '',
+                    university  : (!!active) ? userEdit.university  : '',
+                    cellphone   : (!!active) ? userEdit.cellphone   : '',
+                    description : (!!active) ? userEdit.description : ''
                 }
             }
+
+            enableReinitialize ={  true }
 
             validationSchema={ newUserSchema }
 
@@ -119,14 +140,14 @@ export const UserForm = () => {
                                 />
                             </div>
 
-                            {/* <div className="w-full text-right"> */}
+                            <div className="w-full text-right">
                                 <button
                                     className=' border-none cursor-pointer shadow-md shadow-gray-200 hover:shadow-xl hover:shadow-gray-200 rounded-xl text-xl font-black bg-my-bg-third text-my-button-font active:shadow-none transition-all'
                                     type="submit"
                                 >
-                                    <span className='block py-2 px-4 box-border bg-my-bg-white border-2 border-my-button-border rounded-xl -translate-y-0.5 hover:-translate-y-1.5 active:translate-y-0 transition-all duration-100 ease-linear'>REGISTRAR</span>
+                                    <span className='block py-2 px-4 box-border bg-my-bg-white border-2 border-my-button-border rounded-xl -translate-y-0.5 hover:-translate-y-1.5 active:translate-y-0 transition-all duration-100 ease-linear'>{ !!active ? 'EDITAR' : 'REGISTRAR'}</span>
                                 </button>
-                            {/* </div> */}
+                            </div>
                         </Form>
 
                     );

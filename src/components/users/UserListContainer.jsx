@@ -1,15 +1,19 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 import { userSetActive, userStartDelete } from '../../actions/user';
 
 export const UserListContainer = () => {
 
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const { user } = useSelector( state => state.user);
 
   const handleEdit = ( id ) => {
 
+    dispatch( userSetActive( id ) );
+    navigate( `/update/${ id }` );
+    
   }
 
   const handleDelete = ( id ) => {

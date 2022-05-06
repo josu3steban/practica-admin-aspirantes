@@ -18,7 +18,7 @@ const App = () => {
         <Route path='/' element={ <UserScreen /> }>
           <Route index element={ <UserListContainer /> } />
           <Route path='new' element={ <UserNew /> } />
-          <Route path='update' element={ <UserUpdate /> } />
+          <Route path='update/:id' element={ <UserUpdate /> } />
         </Route>
         
       </Routes>    
