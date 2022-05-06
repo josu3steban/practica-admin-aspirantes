@@ -23,7 +23,7 @@ export const UserListContainer = () => {
     <div className=''>
 
       <h2 className='font-black text-center text-4xl text-my-font-one'>
-        Listado de <span className='text-my-font-two'>Clientes</span>
+        Listado de <span className='text-my-font-two'>Aspirantes</span>
       </h2>
 
       <table className='mt-10 bg-my-bg-second rounded-md table-auto shadow-md w-full' >

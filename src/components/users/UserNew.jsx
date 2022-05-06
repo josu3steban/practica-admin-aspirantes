@@ -9,7 +9,7 @@ export const UserNew = () => {
     <div className='flex flex-col items-center '>
       
       <h2 className='text-4xl text-center text-my-font-one font-black'>
-        Registrar <span className='text-my-font-two'>Usuario</span>
+        Registrar <span className='text-my-font-two'>Aspirante</span>
       </h2>
       
       <UserForm />

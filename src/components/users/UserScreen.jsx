@@ -22,7 +22,7 @@ export const UserScreen = () => {
       
       <SideBar />
 
-      <div className="w-3/4 py-5 px-10 max-h-screen overflow-scroll">
+      <div className="w-4/5 py-5 px-10 max-h-screen overflow-scroll">
         <Outlet />
       </div>
       
