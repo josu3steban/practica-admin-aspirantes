@@ -13,7 +13,7 @@ export const userReducer = ( state = initialState, action) => {
         case types.userLoad:
             return {
                 ...state,
-                user: action.payload
+                user: [ ...action.payload ]
             }
 
         case types.userAdd:
@@ -32,6 +32,19 @@ export const userReducer = ( state = initialState, action) => {
                     : users
                     
                 ))
+            }
+
+        case types.userDelete:
+            return {
+                ...state,
+                user: state.user.filter( users => users.id !== state.active ),
+                active: null
+            }
+
+        case types.userSetActive:
+            return {
+                ...state,
+                active: action.payload                
             }
 
         

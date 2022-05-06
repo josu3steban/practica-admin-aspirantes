@@ -4,6 +4,7 @@
 export const types = {
     // types
 
+    userSetActive:      '[user] set active',
     userLoad:           '[user] load users',
     userUpdate:         '[user] update user',
     userDelete:         '[user] delete user',

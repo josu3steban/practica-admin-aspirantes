@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "name": "josue",
+      "email": "josue_3steban@hotmail.com",
+      "university": "universidad guayaquil",
+      "cellphone": "0998100098",
+      "description": "",
+      "id": 1
+    },
+    {
+      "name": "andreina",
+      "email": "andreina@gmail.com",
+      "university": "universidad salesiana",
+      "cellphone": "0912345677",
+      "description": "andreina mi amor hermosa",
+      "id": 3
+    },
+    {
+      "name": "Ghis",
+      "email": "ghis@gmail.com",
+      "university": "UG",
+      "cellphone": "1234567890",
+      "description": "gis estudiante de la ug",
+      "id": 4
+    }
+  ]
+}
