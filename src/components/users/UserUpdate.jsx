@@ -11,7 +11,7 @@ export const UserUpdate = () => {
 
   useEffect(() => {
 
-    dispatch( userSetActive( id ) );
+    dispatch( userSetActive( Number( id ) ) );
     
     return () => {
 
@@ -19,7 +19,7 @@ export const UserUpdate = () => {
       
     }
   }, [] )
-  
+
   
   return (
     <div className='flex flex-col items-center '>

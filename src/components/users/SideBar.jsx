@@ -29,12 +29,12 @@ export const SideBar = () => {
         Agregar Aspirante
       </Link>
 
-      <Link
-        to="/update"
+      {/* <Link
+        to="/update/:id"
         className={` ${urlActual === '/update' && ' text-xl font-semibold tracking-widest'}  block text-center text-xl font-medium transition-all '`}
       >
         Editar Aspirante
-      </Link>
+      </Link> */}
 
     </div>
   )

@@ -1,15 +1,18 @@
 import { Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 import * as Yup from "yup";
-import { userStartAdd } from "../../actions/user";
+import { userStartAdd, userStartUpdate } from "../../actions/user";
 
 
 export const UserForm = () => {
 
     const dispatch = useDispatch();
-    const { active } = useSelector( state => state.user );
-    const { user } = useSelector( state => state.user );
+    const { user, active } = useSelector( state => state.user );
+    const { id } = useParams();
+    const navigate = useNavigate();
+    // const { user } = useSelector( state => state.user );
 
     const [ userEdit, setUserEdit ] = useState({});
 
@@ -20,24 +23,37 @@ export const UserForm = () => {
         cellphone: Yup.number().positive('El número debe ser postivo').integer('Formato de número incorrecto').typeError("Número no valido"),
     });
 
-    const handleSubmit = ( values ) => {
+    const handleSubmit = ( values, reset ) => {
 
-        dispatch( userStartAdd( values ) );
+        if( !!active ) {
 
-    }
+            // values.id = Number(id);
+            dispatch( userStartUpdate( id, values ) );
+            reset();
+            navigate( '/' );
 
-    useEffect( () => {
+        } else {
 
+            dispatch( userStartAdd( values ) );
 
-        if ( !!active ) {
-
-            setUserEdit( user.find( users => users.id === active ) );
+            reset();
 
         }
 
-    }, [setUserEdit] );
+    }
 
-    console.log('HOOOLAAA');
+    console.log('DATOS', id);
+
+    useEffect( () => {
+
+        if( !!active ) {
+
+            setUserEdit( user.find( users => users.id === Number( id ) ) );
+
+        }
+            
+
+    }, [user] );
 
 
   return (
@@ -47,22 +63,32 @@ export const UserForm = () => {
         
             initialValues={
                 {
-                    name        : (!!active) ? userEdit.name        : '',
-                    email       : (!!active) ? userEdit.email       : '',
-                    university  : (!!active) ? userEdit.university  : '',
-                    cellphone   : (!!active) ? userEdit.cellphone   : '',
-                    description : (!!active) ? userEdit.description : ''
+                    name        : userEdit?.name        ?? '',
+                    email       : userEdit?.email       ?? '',
+                    university  : userEdit?.university  ?? '',
+                    cellphone   : userEdit?.cellphone   ?? '',
+                    description : userEdit?.description ?? ''
                 }
             }
+
+            // initialValues={
+            //     {
+            //         name        : '',
+            //         email       : '',
+            //         university  : '',
+            //         cellphone   : '',
+            //         description : ''
+            //     }
+            // }
 
             enableReinitialize ={  true }
 
             validationSchema={ newUserSchema }
 
             onSubmit={  (values, {resetForm}) => {
-                 handleSubmit(values);
+                 handleSubmit(values, resetForm);
 
-                resetForm();
+                // resetForm();
             }}
         
         >

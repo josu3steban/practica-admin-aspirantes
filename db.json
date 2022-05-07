@@ -1,14 +1,6 @@
 {
   "users": [
     {
-      "name": "josue",
-      "email": "josue_3steban@hotmail.com",
-      "university": "universidad guayaquil",
-      "cellphone": "0998100098",
-      "description": "",
-      "id": 1
-    },
-    {
       "name": "andreina",
       "email": "andreina@gmail.com",
       "university": "universidad salesiana",
@@ -31,6 +23,22 @@
       "cellphone": "0968100098",
       "description": "Soy Josue Tomalá, etudiante de la universidad de guayaquil, tengp 26 años, soy de la ciudad de Milagro",
       "id": 5
+    },
+    {
+      "name": "andres",
+      "email": "josue_3steban@hotmail.com",
+      "university": "guayaquil",
+      "cellphone": "2232434",
+      "description": "actualizado 2",
+      "id": 6
+    },
+    {
+      "name": "Sara",
+      "email": "sara@gmail.com",
+      "university": "Velasco Ibarra",
+      "cellphone": "12983833",
+      "description": "vive en Milagro",
+      "id": 7
     }
   ]
 }

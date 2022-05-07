@@ -3,7 +3,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 import { types } from "../types/types";
 
 
-const url = 'http://localhost:4000/users';
+const url = import.meta.env.VITE_BASE_URL;
 
 const swalError = ( type, error ) => {
 
@@ -91,16 +91,48 @@ export const userStartAdd = ( user ) => {
 
 const userAdd = ( user ) => {
 
-    console.log(user);
-
     return {
         type: types.userAdd,
         payload: user
     }
 };
 
-export const userStartUpdate = ( id ) => {
+export const userStartUpdate = ( id, user ) => {
+    return async(dispatch) => {
 
+        try {
+
+            const response = await fetch( `${ url }/${ id }`, {
+                method: 'PUT',
+                headers: { 'Content-Type' : 'application/json' },
+                body: JSON.stringify( user )
+            } );
+
+            const result = await response.json();
+
+            dispatch( userUpdate( result ) );
+
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Aspírante Actualizado!',
+                timer: 1500
+            });
+
+        } catch( error ) {
+
+            swalError( 'actualizar', error );
+
+        }
+    }
+}
+
+const userUpdate = ( user ) => {
+
+    return {
+        type: types.userUpdate,
+        payload: user
+    }
 
 }
 
@@ -122,7 +154,7 @@ export const userStartDelete = ( id ) => {
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                title: 'Estudiante Eliminado!',
+                title: 'Aspírante Eliminado!',
                 timer: 1500
             });
 

@@ -31,7 +31,8 @@ export const userReducer = ( state = initialState, action) => {
                     ? action.payload
                     : users
                     
-                ))
+                )),
+                active: null
             }
 
         case types.userDelete:
