@@ -1,14 +1,6 @@
 {
   "users": [
     {
-      "name": "andreina",
-      "email": "andreina@gmail.com",
-      "university": "universidad salesiana",
-      "cellphone": "0912345677",
-      "description": "andreina mi amor hermosa",
-      "id": 3
-    },
-    {
       "name": "Ghis",
       "email": "ghis@gmail.com",
       "university": "UG",
