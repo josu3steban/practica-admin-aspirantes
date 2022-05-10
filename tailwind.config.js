@@ -1,6 +1,11 @@
 module.exports = {
   content: [ './index.html', './src/components/**/*.jsx' ],
   theme: {
+
+    screens: {
+      sm: '320px',
+    },
+    
     extend: {
       colors: {
         'my-bg-white': '#fafafa',
