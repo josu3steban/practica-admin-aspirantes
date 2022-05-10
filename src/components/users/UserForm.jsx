@@ -58,9 +58,19 @@ export const UserForm = () => {
 
   return (
 
-    <div className="mt-10 w-3/4 p-10 border rounded-md shadow-md ">
-        <Formik
+    <div className="
+        mt-10
         
+        sm:w-11/12
+
+        md:w-3/4 
+        p-10 
+        border 
+        rounded-md 
+        shadow-md
+    ">
+        <Formik
+
             initialValues={
                 {
                     name        : userEdit?.name        ?? '',
@@ -70,16 +80,6 @@ export const UserForm = () => {
                     description : userEdit?.description ?? ''
                 }
             }
-
-            // initialValues={
-            //     {
-            //         name        : '',
-            //         email       : '',
-            //         university  : '',
-            //         cellphone   : '',
-            //         description : ''
-            //     }
-            // }
 
             enableReinitialize ={  true }
 
@@ -97,7 +97,7 @@ export const UserForm = () => {
 
                     return(
 
-                        <Form>
+                        <Form className="">
                             <div className="mb-4">
                                 <label className='block text-my-font-one text-xl font-medium mb-3'>Nombre</label>
                                 { (errors.name || touched.name ) &&
@@ -168,10 +168,10 @@ export const UserForm = () => {
 
                             <div className="w-full text-right">
                                 <button
-                                    className=' border-none cursor-pointer shadow-md shadow-gray-200 hover:shadow-xl hover:shadow-gray-200 rounded-xl text-xl font-black bg-my-bg-third text-my-button-font active:shadow-none transition-all'
+                                    className='sm:w-full md:w-fit border-none cursor-pointer shadow-md shadow-gray-200 hover:shadow-xl hover:shadow-gray-200 rounded-xl text-xl font-black bg-my-bg-third text-my-button-font active:shadow-none transition-all'
                                     type="submit"
                                 >
-                                    <span className='block py-2 px-4 box-border bg-my-bg-white border-2 border-my-button-border rounded-xl -translate-y-0.5 hover:-translate-y-1.5 active:translate-y-0 transition-all duration-100 ease-linear'>{ !!active ? 'EDITAR' : 'REGISTRAR'}</span>
+                                    <span className='sm:w-full md:w-fit block py-2 px-4 box-border bg-my-bg-white border-2 border-my-button-border rounded-xl -translate-y-0.5 hover:-translate-y-1.5 active:translate-y-0 transition-all duration-100 ease-linear'>{ !!active ? 'EDITAR' : 'REGISTRAR'}</span>
                                 </button>
                             </div>
                         </Form>

@@ -17,12 +17,20 @@ export const UserScreen = () => {
   
   return (
     <div
-      className='flex h-screen'
-    >
+      className='
+        md:flex
+    '>
       
       <SideBar />
 
-      <div className="w-4/5 py-5 px-10 max-h-screen overflow-scroll">
+      <div className="
+        py-5 
+        md:max-h-screen 
+        md:overflow-scroll
+
+        md:w-4/5
+        md:px-10 
+      ">
         <Outlet />
       </div>
       

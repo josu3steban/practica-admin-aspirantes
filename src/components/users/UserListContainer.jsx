@@ -30,77 +30,95 @@ export const UserListContainer = () => {
         Listado de <span className='text-my-font-two'>Aspirantes</span>
       </h2>
 
-      <table className='mt-10 bg-my-bg-second rounded-md table-auto shadow-md w-full' >
-        <thead className='bg-my-bg-third text-my-font-three'>
-          <tr>
-            <th className='p-2'>Nombre</th>
-            <th className='p-2'>Universidad</th>
-            <th className='p-2'>E-mail</th>
-            <th className='p-2'>Celular</th>
-            <th className='p-2'>Descripción</th>
-            <th className='p-2'>Acciones</th>
-          </tr>
-        </thead>
+      <div className="
+      
+        sm:overflow-x-scroll
 
-        <tbody>
+        md:overflow-x-visible
+      ">
+        <table className='
+          mt-10 
+          bg-my-bg-second 
+          table-auto 
+          shadow-md 
 
-          {
-            user.map( users => (
+          sm:w-max
+          sm:mx-2
 
-              <tr key={users.id} className='border-b rounded-md border-gray-300 hover:bg-gray-200'>
+          md:w-full
+          md:mx-0
+        '>
+          <thead className='bg-my-bg-third text-my-font-three'>
+            <tr>
+              <th className='p-2'>Nombre</th>
+              <th className='p-2'>Universidad</th>
+              <th className='p-2'>E-mail</th>
+              <th className='p-2'>Celular</th>
+              <th className='p-2'>Descripción</th>
+              <th className='p-2'>Acciones</th>
+            </tr>
+          </thead>
 
-                <td className='p-2'>{ users.name }</td>
-                <td className='p-2'>{ users.university }</td>
-                <td className='p-2'>{ users.email }</td>
-                <td className='p-2'>{ users.cellphone }</td>
-                <td className='p-2'>{ users.description }</td>
-                <td className='p-2'>
-                  <button
-                    className='
-                      block
-                      border-2
-                      rounded-md
-                      w-full
-                      uppercase
-                      bg-my-button 
-                      text-my-font-one 
-                      border-my-font-one 
-                      hover:bg-my-font-one
-                      hover:text-my-button-hover-font
-                      hover:border-my-font-one
-                      '
-                      onClick = { () => handleEdit( users.id ) }
-                      
-                  >Editar</button>
+          <tbody>
 
-                  <button
-                    className='
-                      block
-                      mt-2
-                      border-2
-                      rounded-md
-                      w-full
-                      uppercase
-                      text-base
-                      bg-my-button 
-                      text-red-500 
-                      border-red-500 
-                      hover:bg-red-500
-                      hover:text-my-button-hover-font
-                      hover:border-red-500
-                      '
-                      onClick = { () => handleDelete( users.id ) }
+            {
+              user.map( users => (
 
-                  >Eliminar</button>
-                </td>
+                <tr key={users.id} className='border-b rounded-md border-gray-300 hover:bg-gray-200'>
 
-              </tr>
-              
-            ))
-          }
+                  <td className='p-2'>{ users.name }</td>
+                  <td className='p-2'>{ users.university }</td>
+                  <td className='p-2'>{ users.email }</td>
+                  <td className='p-2'>{ users.cellphone }</td>
+                  <td className='p-2'>{ users.description }</td>
+                  <td className='p-2'>
+                    <button
+                      className='
+                        block
+                        border-2
+                        rounded-md
+                        w-full
+                        uppercase
+                        bg-my-button 
+                        text-my-font-one 
+                        border-my-font-one 
+                        hover:bg-my-font-one
+                        hover:text-my-button-hover-font
+                        hover:border-my-font-one
+                        '
+                        onClick = { () => handleEdit( users.id ) }
+                        
+                    >Editar</button>
 
-        </tbody>
-      </table>
+                    <button
+                      className='
+                        block
+                        mt-2
+                        border-2
+                        rounded-md
+                        w-full
+                        uppercase
+                        text-base
+                        bg-my-button 
+                        text-red-500 
+                        border-red-500 
+                        hover:bg-red-500
+                        hover:text-my-button-hover-font
+                        hover:border-red-500
+                        '
+                        onClick = { () => handleDelete( users.id ) }
+
+                    >Eliminar</button>
+                  </td>
+
+                </tr>
+                
+              ))
+            }
+
+          </tbody>
+        </table>
+      </div>
       
     </div>
   )

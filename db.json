@@ -39,6 +39,14 @@
       "cellphone": "12983833",
       "description": "vive en Milagro",
       "id": 7
+    },
+    {
+      "name": "mafer",
+      "email": "mafer@gmail.com",
+      "university": "guayaquil",
+      "cellphone": "0918273849",
+      "description": "nada",
+      "id": 8
     }
   ]
 }

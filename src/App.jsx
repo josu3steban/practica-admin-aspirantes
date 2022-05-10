@@ -6,6 +6,9 @@ import { UserScreen } from './components/users/UserScreen';
 import { UserUpdate } from './components/users/UserUpdate';
 
 const App = () => {
+
+  console.log(import.meta.env.VITE_BASE_URL);
+  
   return (
 
     <BrowserRouter>
