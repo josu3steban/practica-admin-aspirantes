@@ -1,14 +1,6 @@
 {
   "users": [
     {
-      "name": "Ghis",
-      "email": "ghis@gmail.com",
-      "university": "UG",
-      "cellphone": "1234567890",
-      "description": "gis estudiante de la ug",
-      "id": 4
-    },
-    {
       "name": "Josue Estaban",
       "email": "josue_3steban@hotmail.com",
       "university": "Universidad de Guayaquil",
@@ -17,28 +9,44 @@
       "id": 5
     },
     {
-      "name": "andres",
-      "email": "josue_3steban@hotmail.com",
-      "university": "guayaquil",
-      "cellphone": "2232434",
-      "description": "actualizado 2",
+      "name": "Andrés",
+      "email": "andres@gmail.com",
+      "university": "UNEMI",
+      "cellphone": "0987834534",
+      "description": "Descripción de prueba Andrés",
       "id": 6
     },
     {
       "name": "Sara",
       "email": "sara@gmail.com",
-      "university": "Velasco Ibarra",
-      "cellphone": "12983833",
-      "description": "vive en Milagro",
+      "university": "Agraria",
+      "cellphone": "0898765465",
+      "description": "Descripción de Sara",
       "id": 7
     },
     {
-      "name": "mafer",
+      "name": "Mafer",
       "email": "mafer@gmail.com",
-      "university": "guayaquil",
+      "university": "Salesiana",
       "cellphone": "0918273849",
-      "description": "nada",
+      "description": "Descripción de Mafer",
       "id": 8
+    },
+    {
+      "name": "Amira",
+      "email": "amira@gmail.com",
+      "university": "ESPOL",
+      "cellphone": "0987876549",
+      "description": "Descripción de Amira",
+      "id": 9
+    },
+    {
+      "name": "Luis",
+      "email": "luis@gmail.com",
+      "university": "UCSG",
+      "cellphone": "0892342178",
+      "description": "Descripción de Luis",
+      "id": 10
     }
   ]
 }
